@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111; /* default dark background */
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Video Background */
+#bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Overlay for readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* dark overlay */
+  z-index: -1;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.hero-content .logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Products Section */
+.products {
+  padding: 60px 20px;
+  text-align: center;
+  background: url('assets/bg-dark.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.products::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.product {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* About Us Section */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background: url('assets/bg-dark.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 12px;
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.about h2, .about p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #25D366;
+  text-decoration: none;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 22px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
